@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barker Scott Ltd | CQC Compliance & Auditing Specialists</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0b1f3a;
+  --navy-lt: #12304f;
+  --steel:   #1e3a5f;
+  --gold:    #b8964a;
+  --gold-lt: #d4ac5a;
+  --white:   #ffffff;
+  --off:     #f8f9fb;
+  --pale:    #eef1f5;
+  --line:    #dde2ea;
+  --text:    #1a2332;
+  --muted:   #5a6a7e;
+  --light:   #8a9bb0;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Mulish', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--white); border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 72px;
+}
+.nav-left { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+.nav-crest {
+  width: 40px; height: 40px; background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Libre Baskerville', serif; font-style: italic;
+  color: var(--gold); font-size: 1.1rem; flex-shrink: 0;
+}
+.nav-brand-text { display: flex; flex-direction: column; }
+.nav-name { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1rem; color: var(--navy); line-height: 1.2; }
+.nav-sub { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 1px; }
+.nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links a {
+  display: block; padding: 0 1.3rem; height: 72px; line-height: 72px;
+  text-decoration: none; color: var(--muted); font-size: 0.8rem;
+  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--navy); border-bottom-color: var(--gold); }
+.nav-cta {
+  background: var(--navy); color: var(--white); padding: 0.6rem 1.5rem;
+  font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; transition: background 0.22s;
+}
+.nav-cta:hover { background: var(--steel); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; background: var(--navy);
+  display: flex; align-items: center;
+  padding: 9rem 5% 6rem; position: relative; overflow: hidden;
+}
+.hero-rule { position: absolute; top: 0; left: 5%; right: 5%; height: 3px; background: linear-gradient(90deg, var(--gold), transparent); }
+.hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 40px);
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 6rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-kicker { display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 2rem; }
+.hero-kicker-line { width: 28px; height: 1px; background: var(--gold); }
+.hero-kicker span { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.6rem, 4.5vw, 4rem); font-weight: 700;
+  line-height: 1.18; color: var(--white); margin-bottom: 1.6rem;
+}
+h1 em { font-style: italic; color: var(--gold-lt); }
+.hero-sub { font-size: 1rem; line-height: 1.82; color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 2.8rem; font-weight: 300; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold {
+  background: var(--gold); color: var(--navy); padding: 0.9rem 2.2rem;
+  font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid var(--gold); transition: all 0.22s;
+}
+.btn-gold:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+.btn-outline-white {
+  background: transparent; color: rgba(255,255,255,0.75); padding: 0.9rem 2.2rem;
+  font-weight: 600; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.22s;
+}
+.btn-outline-white:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-panel { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+.hp-header { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.2rem 1.6rem; display: flex; align-items: center; gap: 0.7rem; }
+.hp-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+.hp-title { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.hp-items { display: flex; flex-direction: column; }
+.hp-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 1.6rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.hp-item:last-child { border-bottom: none; }
+.hp-icon { width: 32px; height: 32px; background: rgba(184,150,74,0.15); border: 1px solid rgba(184,150,74,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+.hp-lbl { font-size: 0.62rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+.hp-val { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+.hp-footer { background: rgba(184,150,74,0.08); border-top: 1px solid rgba(184,150,74,0.2); padding: 1.2rem 1.6rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.hp-contact a { font-size: 0.85rem; color: var(--gold-lt); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+.hp-contact a:hover { color: var(--white); }
+
+/* ─── ACCRED BAR ─── */
+.accred-bar { background: var(--off); border-bottom: 1px solid var(--line); padding: 1rem 5%; display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+.accred-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.accred-item::before { content: '✓'; color: var(--gold); font-size: 0.85rem; }
+
+/* ─── SECTIONS ─── */
+section { padding: 6rem 5%; }
+.max-w { max-width: 1180px; margin: 0 auto; }
+.section-kicker { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem; }
+.section-kicker-line { width: 24px; height: 1px; background: var(--gold); }
+.section-kicker span { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--navy); }
+h2 em { font-style: italic; color: var(--gold); }
+.section-intro { font-size: 0.97rem; line-height: 1.82; color: var(--muted); max-width: 560px; margin-top: 1rem; font-weight: 400; }
+
+/* ─── SERVICES ─── */
+.services-bg { background: var(--off); }
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--line); padding-bottom: 2.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); border-left: 1px solid var(--line); }
+.svc-card {
+  padding: 2.5rem 2.5rem 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--white); transition: all 0.25s; position: relative; overflow: hidden;
+}
+.svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.svc-card:hover { background: var(--navy); }
+.svc-card:hover::before { transform: scaleX(1); }
+.svc-card:hover .svc-num { color: rgba(255,255,255,0.05); }
+.svc-card:hover h3 { color: var(--white); }
+.svc-card:hover p { color: rgba(255,255,255,0.45); }
+.svc-card:hover .svc-tag { color: var(--gold); }
+.svc-num { font-family: 'Libre Baskerville', serif; font-size: 2.8rem; font-weight: 700; color: var(--pale); line-height: 1; margin-bottom: 1.5rem; transition: color 0.25s; }
+h3 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.7rem; line-height: 1.3; transition: color 0.25s; }
+.svc-card p { font-size: 0.875rem; line-height: 1.78; color: var(--muted); transition: color 0.25s; }
+.svc-tag { display: inline-block; margin-top: 1.4rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.25s; }
+
+/* ─── ABOUT ─── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.about-visual { position: relative; }
+.about-img-block { background: var(--navy); padding: 3.5rem; position: relative; overflow: hidden; }
+.about-img-block::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), transparent); }
+.about-img-block::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 32px); }
+.aib-inner { position: relative; z-index: 1; }
+.aib-quote { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.35rem; color: var(--white); line-height: 1.6; margin-bottom: 2rem; }
+.aib-quote span { color: var(--gold-lt); }
+.aib-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); }
+.aib-stat { background: var(--navy-lt); padding: 1.2rem; text-align: center; }
+.aib-val { font-family: 'Libre Baskerville', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.aib-desc { font-size: 0.65rem; color: rgba(255,255,255,0.35); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.about-float { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); padding: 1.1rem 1.4rem; box-shadow: 0 12px 40px rgba(184,150,74,0.3); }
+.af-val { font-family: 'Libre Baskerville', serif; font-size: 1.8rem; font-weight: 700; color: var(--navy); line-height: 1; }
+.af-desc { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--navy); opacity: 0.65; margin-top: 2px; }
+.about-points { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; border: 1px solid var(--line); }
+.ap-row { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.4rem; border-bottom: 1px solid var(--line); transition: background 0.2s; }
+.ap-row:last-child { border-bottom: none; }
+.ap-row:hover { background: var(--off); }
+.ap-icon { width: 36px; height: 36px; background: rgba(184,150,74,0.1); border: 1px solid rgba(184,150,74,0.2); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.ap-row h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+.ap-row p { font-size: 0.845rem; line-height: 1.72; color: var(--muted); }
+
+/* ─── PROCESS ─── */
+.process-bg { background: var(--navy); }
+.process-bg h2 { color: var(--white); }
+.process-bg .section-intro { color: rgba(255,255,255,0.45); }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 3.5rem; border: 1px solid rgba(255,255,255,0.08); }
+.ps { padding: 2.5rem 1.8rem; border-right: 1px solid rgba(255,255,255,0.08); transition: background 0.25s; position: relative; }
+.ps:last-child { border-right: none; }
+.ps:hover { background: rgba(255,255,255,0.03); }
+.ps-num { font-family: 'Libre Baskerville', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 1.5rem; opacity: 0.6; }
+.ps h3 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+.ps p { font-size: 0.8rem; line-height: 1.72; color: rgba(255,255,255,0.38); }
+.ps::after { content: '→'; position: absolute; top: 2.5rem; right: -0.7rem; font-size: 0.9rem; color: rgba(184,150,74,0.3); z-index: 1; }
+.ps:last-child::after { display: none; }
+
+/* ─── WHY ─── */
+.why-bg { background: var(--off); }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); margin-top: 3rem; }
+.why-card { padding: 2.2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: all 0.25s; background: var(--white); }
+.why-card:hover { background: var(--navy); }
+.why-card:hover h4 { color: var(--white); }
+.why-card:hover p { color: rgba(255,255,255,0.45); }
+.why-card:hover .wc-icon-wrap { background: rgba(184,150,74,0.2); border-color: rgba(184,150,74,0.4); }
+.wc-icon-wrap { width: 44px; height: 44px; background: rgba(184,150,74,0.08); border: 1px solid rgba(184,150,74,0.18); display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: 1.1rem; transition: all 0.25s; }
+.why-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; transition: color 0.25s; }
+.why-card p { font-size: 0.835rem; line-height: 1.75; color: var(--muted); transition: color 0.25s; }
+
+/* ─── CTA BAND ─── */
+.cta-band { background: var(--gold); padding: 3rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-band h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; color: var(--navy); }
+.cta-band p { font-size: 0.9rem; color: rgba(11,31,58,0.65); margin-top: 0.4rem; }
+.btn-navy { background: var(--navy); color: var(--white); padding: 0.9rem 2.2rem; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.22s; white-space: nowrap; }
+.btn-navy:hover { background: var(--steel); }
+
+/* ─── CONTACT ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.contact-details { margin-top: 2rem; }
+.cd-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.cd-item:last-of-type { border-bottom: none; }
+.cd-icon-wrap { width: 36px; height: 36px; background: rgba(184,150,74,0.1); border: 1px solid rgba(184,150,74,0.2); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+.cd-label { font-size: 0.62rem; color: var(--light); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2px; font-weight: 700; }
+.cd-value { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+.cd-value a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+.cd-value a:hover { color: var(--navy); }
+.contact-form-wrap { background: var(--off); border: 1px solid var(--line); padding: 2.5rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.f-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.f-field.span2 { grid-column: 1 / -1; }
+.f-field label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.f-field input, .f-field select, .f-field textarea { padding: 0.75rem 0.9rem; border: 1px solid var(--line); background: var(--white); font-family: 'Mulish', sans-serif; font-size: 0.88rem; color: var(--text); transition: border-color 0.2s; outline: none; }
+.f-field input:focus, .f-field select:focus, .f-field textarea:focus { border-color: var(--gold); }
+.f-field textarea { min-height: 120px; resize: vertical; }
+.form-submit { background: var(--navy); color: var(--white); border: none; cursor: pointer; padding: 0.85rem 2.2rem; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.22s; width: 100%; margin-top: 0.5rem; }
+.form-submit:hover { background: var(--steel); }
+
+/* ─── THANK YOU STATE ─── */
+.form-thankyou { display:none; text-align:center; padding:3rem 2rem; }
+.form-thankyou.show { display:block; }
+.form-thankyou .ty-icon { font-size:3rem; margin-bottom:1.2rem; display:block; }
+.form-thankyou h3 { font-family:'Libre Baskerville',serif; font-size:1.4rem; color:var(--navy); margin-bottom:0.7rem; }
+.form-thankyou p { font-size:0.9rem; line-height:1.75; color:var(--muted); }
+.form-actual { transition:opacity 0.3s; }
+.form-actual.hide { display:none; }
+/* Formspree setup banner */
+.formspree-notice { background:rgba(184,150,74,0.08); border:1px solid rgba(184,150,74,0.25); border-left:3px solid var(--gold); padding:1rem 1.2rem; margin-bottom:1.5rem; }
+.formspree-notice p { font-size:0.78rem; line-height:1.65; color:var(--muted); }
+.formspree-notice strong { color:var(--navy); }
+.formspree-notice code { background:var(--pale); padding:0.1rem 0.4rem; font-size:0.75rem; color:var(--navy); border-radius:2px; }
+
+/* ─── FOOTER ─── */
+footer { background: var(--navy); padding: 4rem 5% 2rem; }
+.footer-rule { height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin-bottom: 3rem; }
+.footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.footer-brand-name { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; display: block; }
+.footer-brand p { font-size: 0.83rem; line-height: 1.75; color: rgba(255,255,255,0.3); max-width: 280px; }
+.footer-contact { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.footer-contact a { font-size: 0.83rem; color: var(--gold); text-decoration: none; transition: color 0.2s; }
+.footer-contact a:hover { color: var(--white); }
+.footer-col h4 { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 700; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.74rem; color: rgba(255,255,255,0.2); }
+.footer-reg { font-size: 0.7rem; color: rgba(255,255,255,0.15); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) { .process-steps { grid-template-columns: 1fr 1fr; } .ps::after { display: none; } }
+@media (max-width: 900px) {
+  .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-panel { display: none; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) { .footer-grid, .why-grid { grid-template-columns: 1fr; } .hero-btns { flex-direction: column; } }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-left">
+    <div class="nav-crest">BS</div>
+    <div class="nav-brand-text">
+      <span class="nav-name">Barker Scott Ltd</span>
+      <span class="nav-sub">CQC Compliance Specialists</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">
+        <div class="hero-kicker-line"></div>
+        <span>CQC Compliance Specialists &nbsp;·&nbsp; Essex, UK</span>
+      </div>
+      <h1>Achieve CQC Compliance<br><em>With Confidence.</em></h1>
+      <p class="hero-sub">Barker Scott Ltd provides specialist CQC compliance consultancy and ongoing monthly auditing for private healthcare providers across the UK. Based in Essex, trusted nationwide.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">Book a Free Consultation</a>
+        <a href="#services" class="btn-outline-white">View Our Services</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hp-header">
+        <div class="hp-dot"></div>
+        <span class="hp-title">Why Barker Scott</span>
+      </div>
+      <div class="hp-items">
+        <div class="hp-item"><div class="hp-icon">✓</div><div><div class="hp-lbl">Track Record</div><div class="hp-val">Multiple CQC registrations achieved</div></div></div>
+        <div class="hp-item"><div class="hp-icon">🏥</div><div><div class="hp-lbl">Speciality</div><div class="hp-val">Private healthcare sector only</div></div></div>
+        <div class="hp-item"><div class="hp-icon">📋</div><div><div class="hp-lbl">Ongoing Support</div><div class="hp-val">Monthly auditing to maintain compliance</div></div></div>
+        <div class="hp-item"><div class="hp-icon">📍</div><div><div class="hp-lbl">Coverage</div><div class="hp-val">Essex-based · UK-wide</div></div></div>
+      </div>
+      <div class="hp-footer">
+        <div class="hp-contact">
+          <a href="tel:07407184948">📞 &nbsp;07407 184948</a>
+          <a href="mailto:info@BarkerScott.co.uk">✉️ &nbsp;info@BarkerScott.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCRED BAR -->
+<div class="accred-bar">
+  <div class="accred-item">CQC Registration Support</div>
+  <div class="accred-item">Monthly Compliance Auditing</div>
+  <div class="accred-item">Risk Assessments</div>
+  <div class="accred-item">Policy &amp; Procedure Development</div>
+  <div class="accred-item">Essex-Based · UK-Wide</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="max-w">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-kicker"><div class="section-kicker-line"></div><span>What We Offer</span></div>
+        <h2>Our Services</h2>
+      </div>
+      <p style="font-size:0.9rem;color:var(--muted);max-width:360px;line-height:1.78;text-align:right;">End-to-end CQC compliance support for private healthcare providers — from first registration through to continuous monthly auditing.</p>
+    </div>
+    <div class="services-grid reveal d1">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <h3>CQC Registration &amp; Compliance</h3>
+        <p>We guide you through every step of the CQC registration process, ensuring your policies, procedures and governance frameworks fully meet regulatory requirements before inspection.</p>
+        <span class="svc-tag">Initial Compliance →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <h3>Monthly Compliance Auditing</h3>
+        <p>Our retained monthly auditing service provides regular reviews of your operations, identifying risks early and keeping your organisation continuously compliant as regulations evolve.</p>
+        <span class="svc-tag">Ongoing Support →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <h3>Risk Assessments</h3>
+        <p>Comprehensive, CQC-aligned risk assessments across your organisation — identifying hazards, evaluating controls, and producing clear documentation that demonstrates safe, well-managed care.</p>
+        <span class="svc-tag">Risk Management →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <h3>Policy &amp; Procedure Development</h3>
+        <p>We create and update bespoke policies and procedures aligned to the CQC's Key Lines of Enquiry, ensuring your documentation is inspection-ready at all times.</p>
+        <span class="svc-tag">Documentation →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <h3>Mock CQC Inspections</h3>
+        <p>Our thorough mock inspections identify gaps before the regulator does, giving your team the confidence and preparation needed to achieve the best possible rating.</p>
+        <span class="svc-tag">Inspection Preparation →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <h3>Action Plan Support</h3>
+        <p>If your organisation has received a CQC action plan or Warning Notice, we provide urgent, practical support to address shortfalls and demonstrate measurable improvement.</p>
+        <span class="svc-tag">Remediation →</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">07</div>
+        <h3>Staff Compliance Training</h3>
+        <p>We support your team's understanding of CQC requirements, helping build a compliance culture that sustains Good and Outstanding ratings for the long term.</p>
+        <span class="svc-tag">Team Development →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="max-w">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-visual">
+          <div class="about-img-block">
+            <div class="aib-inner">
+              <p class="aib-quote">"Compliance isn't a box-ticking exercise. It's the foundation of <span>safe, high-quality care.</span>"</p>
+              <div class="aib-stats">
+                <div class="aib-stat"><div class="aib-val">100%</div><div class="aib-desc">Registration Success</div></div>
+                <div class="aib-stat"><div class="aib-val">Monthly</div><div class="aib-desc">Audit Cycles</div></div>
+                <div class="aib-stat"><div class="aib-val">UK Wide</div><div class="aib-desc">Client Coverage</div></div>
+                <div class="aib-stat"><div class="aib-val">Essex</div><div class="aib-desc">Headquarters</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-float">
+            <div class="af-val">Private</div>
+            <div class="af-desc">Healthcare Specialists</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-kicker"><div class="section-kicker-line"></div><span>About Us</span></div>
+        <h2>Experience You Can <em>Rely On</em></h2>
+        <p class="section-intro">Based in Essex, we bring years of hands-on experience helping private healthcare providers navigate the complexities of CQC regulation.</p>
+        <div class="about-points reveal d1">
+          <div class="ap-row"><div class="ap-icon">✓</div><div><h4>Proven CQC Track Record</h4><p>We have successfully supported multiple healthcare organisations through CQC registration and inspection, with an outstanding success rate across every engagement.</p></div></div>
+          <div class="ap-row"><div class="ap-icon">🏥</div><div><h4>Private Healthcare Specialists</h4><p>Our expertise is focused exclusively on the private healthcare sector — meaning our advice is always regulation-specific and practically grounded.</p></div></div>
+          <div class="ap-row"><div class="ap-icon">📅</div><div><h4>Continuous Monthly Support</h4><p>Compliance is not a one-time event. Our monthly auditing ensures you remain compliant year-round with proactive guidance as CQC standards evolve.</p></div></div>
+          <div class="ap-row"><div class="ap-icon">📍</div><div><h4>Essex-Based, Nationally Trusted</h4><p>Headquartered in Essex with clients across the UK — the personal attention of a specialist consultancy with nationwide reach.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="max-w">
+    <div class="section-kicker"><div class="section-kicker-line"></div><span>How It Works</span></div>
+    <h2 style="color:var(--white)">Our Five-Step Process</h2>
+    <p class="section-intro">A clear, structured approach that takes you from initial assessment to full CQC compliance — and keeps you there.</p>
+    <div class="process-steps reveal d1">
+      <div class="ps"><div class="ps-num">01</div><h3>Free Consultation</h3><p>A no-obligation call to understand your organisation, current compliance status, and goals.</p></div>
+      <div class="ps"><div class="ps-num">02</div><h3>Gap Analysis</h3><p>A thorough review of your existing policies, procedures, and governance against CQC requirements.</p></div>
+      <div class="ps"><div class="ps-num">03</div><h3>Action Plan</h3><p>A clear, prioritised plan with practical steps to achieve full CQC compliance ahead of inspection.</p></div>
+      <div class="ps"><div class="ps-num">04</div><h3>Implementation</h3><p>We work alongside your team to implement changes, develop documentation, and prepare for inspection.</p></div>
+      <div class="ps"><div class="ps-num">05</div><h3>Monthly Auditing</h3><p>Ongoing monthly audits ensure you remain compliant with regular reports and recommendations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-bg" id="why">
+  <div class="max-w">
+    <div class="section-kicker"><div class="section-kicker-line"></div><span>Why Choose Us</span></div>
+    <h2>What Sets Us Apart</h2>
+    <p class="section-intro">We are not a generalist consultancy. We are private healthcare compliance specialists — and that focus makes all the difference.</p>
+    <div class="why-grid reveal d1">
+      <div class="why-card"><div class="wc-icon-wrap">🎯</div><h4>Sector Specialists</h4><p>We work exclusively with private healthcare providers. No generalism — just deep, focused expertise in CQC compliance.</p></div>
+      <div class="why-card"><div class="wc-icon-wrap">📈</div><h4>Proven Results</h4><p>Multiple clients have achieved successful CQC registration with our support. Our track record speaks for itself.</p></div>
+      <div class="why-card"><div class="wc-icon-wrap">🔄</div><h4>Ongoing Partnership</h4><p>We do not simply help you get compliant and disappear. Monthly auditing means we are always working alongside you.</p></div>
+      <div class="why-card"><div class="wc-icon-wrap">⚡</div><h4>Rapid Response</h4><p>Received a Warning Notice or urgent action plan? We provide fast, practical support to address shortfalls quickly.</p></div>
+      <div class="why-card"><div class="wc-icon-wrap">📄</div><h4>Clear Documentation</h4><p>We produce inspection-ready policies, procedures and risk assessments that demonstrate genuine compliance.</p></div>
+      <div class="why-card"><div class="wc-icon-wrap">🤝</div><h4>Honest Advice</h4><p>We tell you exactly where you stand and what needs to change — no fluff, no jargon, just clear professional guidance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div>
+    <h2>Ready to Achieve CQC Compliance?</h2>
+    <p>Get in touch today for a free, no-obligation consultation with our specialist team.</p>
+  </div>
+  <a href="#contact" class="btn-navy">Book a Free Consultation</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="max-w">
+    <div class="contact-grid">
+      <div>
+        <div class="section-kicker"><div class="section-kicker-line"></div><span>Book a Consultation</span></div>
+        <h2>Start Your Compliance <em>Journey</em></h2>
+        <p class="section-intro">Complete the form with your details and we will be in touch to arrange your free consultation at a time that suits you.</p>
+        <div class="contact-details reveal d1">
+          <div class="cd-item"><div class="cd-icon-wrap">📞</div><div><div class="cd-label">Telephone</div><div class="cd-value"><a href="tel:07407184948">07407 184948</a></div></div></div>
+          <div class="cd-item"><div class="cd-icon-wrap">✉️</div><div><div class="cd-label">Email</div><div class="cd-value"><a href="mailto:info@BarkerScott.co.uk">info@BarkerScott.co.uk</a></div></div></div>
+          <div class="cd-item"><div class="cd-icon-wrap">📍</div><div><div class="cd-label">Location</div><div class="cd-value">Essex, United Kingdom</div></div></div>
+          <div class="cd-item"><div class="cd-icon-wrap">🌐</div><div><div class="cd-label">Coverage</div><div class="cd-value">UK-wide · Private Healthcare Sector</div></div></div>
+          <div class="cd-item"><div class="cd-icon-wrap">⏱️</div><div><div class="cd-label">Response Time</div><div class="cd-value">We aim to respond within one business day</div></div></div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <div class="contact-form-wrap">
+
+          <!-- ⚠️ FORMSPREE SETUP NOTICE — REMOVE THIS BLOCK AFTER SETUP -->
+          <div class="formspree-notice">
+            <p><strong>⚙️ One-time setup required to activate email sending:</strong><br>
+            1. Go to <strong>formspree.io</strong> and create a free account<br>
+            2. Click <strong>"New Form"</strong> and enter <code>claire@hearttecsolutions.co.uk</code><br>
+            3. Copy the form ID (looks like <code>xpzgkrdo</code>)<br>
+            4. In this HTML file, find <code>YOUR_FORM_ID</code> and replace it with your ID<br>
+            5. Delete this yellow notice box — the form is then fully live ✓</p>
+          </div>
+
+          <!-- CONSULTATION FORM — sends to claire@hearttecsolutions.co.uk via Formspree -->
+          <div class="form-actual" id="formActual">
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              onsubmit="handleFormSubmit(event)"
+            >
+              <!-- Hidden fields for Formspree -->
+              <input type="hidden" name="_subject" value="New Consultation Request — Barker Scott Ltd">
+              <input type="hidden" name="_replyto" value="">
+
+              <div class="form-row">
+
+                <!-- CONTACT DETAILS -->
+                <div class="f-field">
+                  <label>Full Name *</label>
+                  <input type="text" name="full_name" placeholder="Jane Smith" required>
+                </div>
+                <div class="f-field">
+                  <label>Job Title / Role *</label>
+                  <input type="text" name="job_title" placeholder="Registered Manager" required>
+                </div>
+                <div class="f-field">
+                  <label>Organisation Name *</label>
+                  <input type="text" name="organisation" placeholder="Healthcare Provider Ltd" required>
+                </div>
+                <div class="f-field">
+                  <label>Organisation Type</label>
+                  <select name="organisation_type">
+                    <option value="" disabled selected>Select type</option>
+                    <option>Private Hospital</option>
+                    <option>Care Home</option>
+                    <option>Dental Practice</option>
+                    <option>GP / Primary Care</option>
+                    <option>Mental Health Provider</option>
+                    <option>Cosmetic / Aesthetic Clinic</option>
+                    <option>Homecare / Domiciliary Care</option>
+                    <option>Other Private Healthcare</option>
+                  </select>
+                </div>
+                <div class="f-field">
+                  <label>Email Address *</label>
+                  <input type="email" name="email" placeholder="jane@organisation.co.uk" required>
+                </div>
+                <div class="f-field">
+                  <label>Phone Number *</label>
+                  <input type="tel" name="phone" placeholder="07700 000000" required>
+                </div>
+
+                <!-- CQC STATUS -->
+                <div class="f-field span2">
+                  <label>Current CQC Status</label>
+                  <select name="cqc_status">
+                    <option value="" disabled selected>Select current status</option>
+                    <option>Not yet registered — need to apply</option>
+                    <option>Registered — need ongoing compliance support</option>
+                    <option>Registered — received action plan or warning notice</option>
+                    <option>Registered — preparing for upcoming inspection</option>
+                    <option>Unsure of current status</option>
+                  </select>
+                </div>
+
+                <!-- SERVICE REQUIRED -->
+                <div class="f-field span2">
+                  <label>Service(s) Required</label>
+                  <select name="service_required">
+                    <option value="" disabled selected>Select primary service needed</option>
+                    <option>CQC Registration Support</option>
+                    <option>Monthly Compliance Auditing</option>
+                    <option>Risk Assessment</option>
+                    <option>Mock CQC Inspection</option>
+                    <option>Policy &amp; Procedure Development</option>
+                    <option>Action Plan / Warning Notice Support</option>
+                    <option>Staff Compliance Training</option>
+                    <option>Full Compliance Package (multiple services)</option>
+                    <option>Not sure — need advice</option>
+                  </select>
+                </div>
+
+                <!-- LOCATION -->
+                <div class="f-field span2">
+                  <label>Organisation Location</label>
+                  <input type="text" name="location" placeholder="e.g. Colchester, Essex">
+                </div>
+
+                <!-- PREFERRED CONTACT -->
+                <div class="f-field">
+                  <label>Preferred Contact Method</label>
+                  <select name="preferred_contact">
+                    <option value="" disabled selected>Select preference</option>
+                    <option>Phone call</option>
+                    <option>Email</option>
+                    <option>Either is fine</option>
+                  </select>
+                </div>
+                <div class="f-field">
+                  <label>Best Time to Contact</label>
+                  <select name="best_time">
+                    <option value="" disabled selected>Select time</option>
+                    <option>Morning (9am – 12pm)</option>
+                    <option>Afternoon (12pm – 5pm)</option>
+                    <option>Any time during business hours</option>
+                  </select>
+                </div>
+
+                <!-- MESSAGE -->
+                <div class="f-field span2">
+                  <label>Tell Us About Your Situation</label>
+                  <textarea name="message" placeholder="Please give us a brief overview of your organisation, your current compliance challenges, and anything else you'd like us to know before the consultation…"></textarea>
+                </div>
+
+                <!-- HONEYPOT anti-spam -->
+                <input type="text" name="_gotcha" style="display:none">
+
+              </div>
+
+              <button type="submit" class="form-submit">Book My Free Consultation →</button>
+              <p style="font-size:0.72rem;color:var(--light);margin-top:0.8rem;text-align:center;">By submitting this form you agree to us contacting you regarding your enquiry. We will never share your details with third parties.</p>
+            </form>
+          </div>
+
+          <!-- THANK YOU MESSAGE (shown after submission) -->
+          <div class="form-thankyou" id="formThankyou">
+            <span class="ty-icon">✅</span>
+            <h3>Thank You — We'll Be in Touch</h3>
+            <p>Your consultation request has been received and sent to our team. We aim to respond within one business day to arrange a time that suits you.<br><br>In the meantime, if you have any urgent queries please call us on <a href="tel:07407184948" style="color:var(--gold);font-weight:700;">07407 184948</a> or email <a href="mailto:info@BarkerScott.co.uk" style="color:var(--gold);font-weight:700;">info@BarkerScott.co.uk</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="max-w">
+    <div class="footer-rule"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Barker Scott Ltd</span>
+        <p>Specialist CQC compliance consultancy and auditing for private healthcare providers across the UK. Based in Essex, trusted nationwide.</p>
+        <div class="footer-contact">
+          <a href="tel:07407184948">📞 07407 184948</a>
+          <a href="mailto:info@BarkerScott.co.uk">✉️ info@BarkerScott.co.uk</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">CQC Registration</a></li>
+          <li><a href="#services">Monthly Auditing</a></li>
+          <li><a href="#services">Risk Assessments</a></li>
+          <li><a href="#services">Mock Inspections</a></li>
+          <li><a href="#services">Policy Development</a></li>
+          <li><a href="#services">Action Plan Support</a></li>
+          <li><a href="#services">Staff Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Barker Scott Ltd. All rights reserved. Registered in England &amp; Wales.</p>
+      <span class="footer-reg">Essex, UK &nbsp;·&nbsp; CQC Compliance Specialists</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') })
+  }, { threshold: 0.08 })
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
+
+  // Formspree form handler — shows thank you message on success
+  async function handleFormSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const btn = form.querySelector('.form-submit')
+    btn.textContent = 'Sending…'
+    btn.disabled = true
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      if (response.ok) {
+        document.getElementById('formActual').classList.add('hide')
+        document.getElementById('formThankyou').classList.add('show')
+      } else {
+        btn.textContent = 'Something went wrong — please try again'
+        btn.style.background = '#8b1a2e'
+        btn.disabled = false
+      }
+    } catch (err) {
+      btn.textContent = 'Something went wrong — please try again'
+      btn.style.background = '#8b1a2e'
+      btn.disabled = false
+    }
+  }
+</script>
+</body>
+</html>
