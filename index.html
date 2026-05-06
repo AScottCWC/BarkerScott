@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
- <meta name="google-site-verification" content="4reIhG-PWNTtwSNySclAyiNcOwXED2IqvwRf1mVs02o" /> 
+<meta name="google-site-verification" content="4reIhG-PWNTtwSNySclAyiNcOwXED2IqvwRf1mVs02o" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barker Scott Ltd | CQC Compliance & Auditing Specialists</title>
+
+<!-- SEO: Primary tags -->
+<title>CQC Compliance Consultants | Barker Scott Ltd — Essex & UK-Wide</title>
+<meta name="description" content="Specialist CQC registration, compliance auditing and inspection support for private healthcare providers. Based in Essex, trusted UK-wide. Book a free consultation today.">
+<meta name="keywords" content="CQC compliance consultants, CQC registration support, CQC accreditation, CQC auditing, CQC compliance Essex, private healthcare compliance, CQC inspection preparation, CQC warning notice support, mock CQC inspection, CQC consultancy UK, healthcare compliance consultants, CQC registration help">
+
+<!-- SEO: Open Graph -->
+<meta property="og:title" content="CQC Compliance Consultants | Barker Scott Ltd">
+<meta property="og:description" content="Expert CQC registration, auditing and compliance support for private healthcare providers across the UK. Essex-based, nationwide reach.">
+<meta property="og:url" content="https://barker-scott.co.uk">
+<meta property="og:type" content="website">
+
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -234,11 +245,6 @@ h3 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 7
 .form-thankyou p { font-size:0.9rem; line-height:1.75; color:var(--muted); }
 .form-actual { transition:opacity 0.3s; }
 .form-actual.hide { display:none; }
-/* Formspree setup banner */
-.formspree-notice { background:rgba(184,150,74,0.08); border:1px solid rgba(184,150,74,0.25); border-left:3px solid var(--gold); padding:1rem 1.2rem; margin-bottom:1.5rem; }
-.formspree-notice p { font-size:0.78rem; line-height:1.65; color:var(--muted); }
-.formspree-notice strong { color:var(--navy); }
-.formspree-notice code { background:var(--pale); padding:0.1rem 0.4rem; font-size:0.75rem; color:var(--navy); border-radius:2px; }
 
 /* ─── FOOTER ─── */
 footer { background: var(--navy); padding: 4rem 5% 2rem; }
@@ -498,57 +504,26 @@ footer { background: var(--navy); padding: 4rem 5% 2rem; }
 
       <div class="reveal d2">
         <div class="contact-form-wrap">
-
-          <!-- CONSULTATION FORM — sends to claire@hearttecsolutions.co.uk via Formspree -->
           <div class="form-actual" id="formActual">
-            <form
-              action="https://formspree.io/f/xzdobnnw"
-              method="POST"
-              onsubmit="handleFormSubmit(event)"
-            >
-              <!-- Hidden fields for Formspree -->
+            <form action="https://formspree.io/f/xzdobnnw" method="POST" onsubmit="handleFormSubmit(event)">
               <input type="hidden" name="_subject" value="New Consultation Request — Barker Scott Ltd">
               <input type="hidden" name="_replyto" value="">
-
               <div class="form-row">
-
-                <!-- CONTACT DETAILS -->
-                <div class="f-field">
-                  <label>Full Name *</label>
-                  <input type="text" name="full_name" placeholder="Jane Smith" required>
-                </div>
-                <div class="f-field">
-                  <label>Job Title / Role *</label>
-                  <input type="text" name="job_title" placeholder="Registered Manager" required>
-                </div>
-                <div class="f-field">
-                  <label>Organisation Name *</label>
-                  <input type="text" name="organisation" placeholder="Healthcare Provider Ltd" required>
-                </div>
+                <div class="f-field"><label>Full Name *</label><input type="text" name="full_name" placeholder="Jane Smith" required></div>
+                <div class="f-field"><label>Job Title / Role *</label><input type="text" name="job_title" placeholder="Registered Manager" required></div>
+                <div class="f-field"><label>Organisation Name *</label><input type="text" name="organisation" placeholder="Healthcare Provider Ltd" required></div>
                 <div class="f-field">
                   <label>Organisation Type</label>
                   <select name="organisation_type">
                     <option value="" disabled selected>Select type</option>
-                    <option>Private Hospital</option>
-                    <option>Care Home</option>
-                    <option>Dental Practice</option>
-                    <option>GP / Primary Care</option>
-                    <option>Mental Health Provider</option>
-                    <option>Cosmetic / Aesthetic Clinic</option>
-                    <option>Homecare / Domiciliary Care</option>
+                    <option>Private Hospital</option><option>Care Home</option><option>Dental Practice</option>
+                    <option>GP / Primary Care</option><option>Mental Health Provider</option>
+                    <option>Cosmetic / Aesthetic Clinic</option><option>Homecare / Domiciliary Care</option>
                     <option>Other Private Healthcare</option>
                   </select>
                 </div>
-                <div class="f-field">
-                  <label>Email Address *</label>
-                  <input type="email" name="email" placeholder="jane@organisation.co.uk" required>
-                </div>
-                <div class="f-field">
-                  <label>Phone Number *</label>
-                  <input type="tel" name="phone" placeholder="07700 000000" required>
-                </div>
-
-                <!-- CQC STATUS -->
+                <div class="f-field"><label>Email Address *</label><input type="email" name="email" placeholder="jane@organisation.co.uk" required></div>
+                <div class="f-field"><label>Phone Number *</label><input type="tel" name="phone" placeholder="07700 000000" required></div>
                 <div class="f-field span2">
                   <label>Current CQC Status</label>
                   <select name="cqc_status">
@@ -560,73 +535,45 @@ footer { background: var(--navy); padding: 4rem 5% 2rem; }
                     <option>Unsure of current status</option>
                   </select>
                 </div>
-
-                <!-- SERVICE REQUIRED -->
                 <div class="f-field span2">
                   <label>Service(s) Required</label>
                   <select name="service_required">
                     <option value="" disabled selected>Select primary service needed</option>
-                    <option>CQC Registration Support</option>
-                    <option>Monthly Compliance Auditing</option>
-                    <option>Risk Assessment</option>
-                    <option>Mock CQC Inspection</option>
-                    <option>Policy &amp; Procedure Development</option>
-                    <option>Action Plan / Warning Notice Support</option>
-                    <option>Staff Compliance Training</option>
-                    <option>Full Compliance Package (multiple services)</option>
+                    <option>CQC Registration Support</option><option>Monthly Compliance Auditing</option>
+                    <option>Risk Assessment</option><option>Mock CQC Inspection</option>
+                    <option>Policy &amp; Procedure Development</option><option>Action Plan / Warning Notice Support</option>
+                    <option>Staff Compliance Training</option><option>Full Compliance Package (multiple services)</option>
                     <option>Not sure — need advice</option>
                   </select>
                 </div>
-
-                <!-- LOCATION -->
-                <div class="f-field span2">
-                  <label>Organisation Location</label>
-                  <input type="text" name="location" placeholder="e.g. Colchester, Essex">
-                </div>
-
-                <!-- PREFERRED CONTACT -->
+                <div class="f-field span2"><label>Organisation Location</label><input type="text" name="location" placeholder="e.g. Colchester, Essex"></div>
                 <div class="f-field">
                   <label>Preferred Contact Method</label>
                   <select name="preferred_contact">
                     <option value="" disabled selected>Select preference</option>
-                    <option>Phone call</option>
-                    <option>Email</option>
-                    <option>Either is fine</option>
+                    <option>Phone call</option><option>Email</option><option>Either is fine</option>
                   </select>
                 </div>
                 <div class="f-field">
                   <label>Best Time to Contact</label>
                   <select name="best_time">
                     <option value="" disabled selected>Select time</option>
-                    <option>Morning (9am – 12pm)</option>
-                    <option>Afternoon (12pm – 5pm)</option>
+                    <option>Morning (9am – 12pm)</option><option>Afternoon (12pm – 5pm)</option>
                     <option>Any time during business hours</option>
                   </select>
                 </div>
-
-                <!-- MESSAGE -->
-                <div class="f-field span2">
-                  <label>Tell Us About Your Situation</label>
-                  <textarea name="message" placeholder="Please give us a brief overview of your organisation, your current compliance challenges, and anything else you'd like us to know before the consultation…"></textarea>
-                </div>
-
-                <!-- HONEYPOT anti-spam -->
+                <div class="f-field span2"><label>Tell Us About Your Situation</label><textarea name="message" placeholder="Please give us a brief overview of your organisation, your current compliance challenges, and anything else you'd like us to know before the consultation…"></textarea></div>
                 <input type="text" name="_gotcha" style="display:none">
-
               </div>
-
               <button type="submit" class="form-submit">Book My Free Consultation →</button>
               <p style="font-size:0.72rem;color:var(--light);margin-top:0.8rem;text-align:center;">By submitting this form you agree to us contacting you regarding your enquiry. We will never share your details with third parties.</p>
             </form>
           </div>
-
-          <!-- THANK YOU MESSAGE (shown after submission) -->
           <div class="form-thankyou" id="formThankyou">
             <span class="ty-icon">✅</span>
             <h3>Thank You — We'll Be in Touch</h3>
             <p>Your consultation request has been received and sent to our team. We aim to respond within one business day to arrange a time that suits you.<br><br>In the meantime, if you have any urgent queries please call us on <a href="tel:07407184948" style="color:var(--gold);font-weight:700;">07407 184948</a> or email <a href="mailto:info@BarkerScott.co.uk" style="color:var(--gold);font-weight:700;">info@BarkerScott.co.uk</a>.</p>
           </div>
-
         </div>
       </div>
     </div>
@@ -676,20 +623,17 @@ footer { background: var(--navy); padding: 4rem 5% 2rem; }
 </footer>
 
 <script>
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') })
   }, { threshold: 0.08 })
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
 
-  // Formspree form handler — shows thank you message on success
   async function handleFormSubmit(e) {
     e.preventDefault()
     const form = e.target
     const btn = form.querySelector('.form-submit')
     btn.textContent = 'Sending…'
     btn.disabled = true
-
     try {
       const response = await fetch(form.action, {
         method: 'POST',
